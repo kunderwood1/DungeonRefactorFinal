@@ -1,4 +1,4 @@
-public abstract class DungeonCharacter implements Attack{
+public abstract class DungeonCharacter implements Attack {
     private String name;
     private int hitPoints;
     private int attackSpeed;
@@ -8,23 +8,38 @@ public abstract class DungeonCharacter implements Attack{
 
     protected DungeonCharacter(String name, int hitPoints, int attackSpeed, double chanceToHit, int damageMin, int damageMax) {
 
-        this.name = name;
-        this.hitPoints = hitPoints;
-        this.attackSpeed = attackSpeed;
-        this.chanceToHit = chanceToHit;
-        this.damageMin = damageMin;
-        this.damageMax = damageMax;
+        setName(name);
+        setHitPoints(hitPoints);
+        setAttackSpeed(attackSpeed);
+        setChanceToHit(chanceToHit);
+        setDamageVariance(damageMin,damageMax);
     }
-
-    public String getName() {
-        return name;
-    }
-
 
     public void setName(String name) {
         this.name = name;
     }
 
+    public void setHitPoints(final int hitPoints) { 
+        this.hitPoints = hitPoints; 
+    }
+	
+    public void setAttackSpeed(final int attackSpeed) { 
+        this.attackSpeed = attackSpeed; 
+    }
+	
+    public void setChanceToHit(final double chanceToHit) { 
+        this.chanceToHit = chanceToHit; 
+    }
+   	
+    public void setDamageVariance(final int damageMin, final int damageMax){ 
+        this.damageMin = damageMin; 
+        this.damageMax = damageMax; 
+    }
+
+
+    public String getName() {
+        return name;
+    }
 
     public int getHitPoints() {
         return hitPoints;

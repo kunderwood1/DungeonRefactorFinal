@@ -8,8 +8,20 @@ public abstract class Hero extends DungeonCharacter {
                 double chanceToHit, int damageMin, int damageMax,
                 double chanceToBlock) {
         super(name, hitPoints, attackSpeed, chanceToHit, damageMin, damageMax);
-        this.chanceToBlock = chanceToBlock;
+        setChanceToBlock(chanceToBlock);
         readName();
+    }
+
+    public void setChanceToBlock(final double chanceToBlock) {
+        this.chanceToBlock = chanceToBlock;    
+    }
+    
+    public double getChanceToBlock() {
+        return this.chanceToBlock;
+    }
+
+    public int getNumTurns() {
+        return this.numTurns;    
     }
 
     public void readName() {

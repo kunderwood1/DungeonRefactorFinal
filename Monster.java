@@ -8,11 +8,18 @@ public abstract class Monster extends DungeonCharacter {
                    int damageMin, int damageMax,
                    int minHeal, int maxHeal) {
         super(name, hitPoints, attackSpeed, chanceToHit, damageMin, damageMax);
-        this.chanceToHeal = chanceToHeal;
-        this.maxHeal = maxHeal;
-        this.minHeal = minHeal;
+        setChanceToHeal(chanceToHeal);
+        setHealVariance(minHeal,maxHeal);
 
     }
+
+
+    public void setChanceToHeal(final double chanceToHeal) { this.chanceToHeal = chanceToHeal; }
+    public void setHealVariance(final int minHeal,final int maxHeal) { this.minHeal = minHeal; this.maxHeal = maxHeal; }
+    public double getChanceToHeal() { return this.chanceToHeal; }
+
+
+
     public void heal() {
         boolean canHeal;
         int healPoints;
